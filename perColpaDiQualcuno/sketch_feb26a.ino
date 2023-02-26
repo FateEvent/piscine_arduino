@@ -1,8 +1,9 @@
 #include "SevSeg.h"
 
 SevSeg	sevseg;
-char	str[] = "Per colpa di qualcuno non si fa credito a nessuno";
-int		len = 49;
+//char	*str = "We are such stuff As dreams are made on, and our little life Is rounded with a sleep.";
+char	*str = "Per colpa di qualcuno non si fa credito a nessuno.";
+int		len = strlen(str);
 
 void setup(){
 	byte	numDigits = 1;
