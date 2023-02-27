@@ -1,8 +1,8 @@
 #include "SevSeg.h"
 
 SevSeg	sevseg;
-//char	*str = "We are such stuff As dreams are made on, and our little life Is rounded with a sleep.";
-char	*str = "Per colpa di qualcuno non si fa credito a nessuno.";
+char	*str = "We are such stuff As dreams are made on, and our little life Is rounded with a sleep.";
+//char	*str = "Per colpa di qualcuno non si fa credito a nessuno.";
 int		len = strlen(str);
 
 void setup(){
@@ -11,19 +11,22 @@ void setup(){
 	byte	segmentPins[] = {6, 5, 2, 3, 4, 7, 8, 9};
 	bool	resistorsOnSegments = true;
 	byte	hardwareConfig = COMMON_CATHODE;
- 
+
+  Serial.begin(9600);
 	sevseg.begin(hardwareConfig, numDigits, digitPins, segmentPins, resistorsOnSegments);
 	sevseg.setBrightness(90);
 }
 
 void loop() {
-	for (int i = 0; i < len; i++)
+	int i = 0;
+
+	while (i < len)
 	{
-		char buf [2];
-		buf [0] = str[i];
-		buf [1] = 0;  // null terminator
+		char	buf[2] = {str[i], 0};
+
 		sevseg.setChars(buf);
+		delay(500);
 		sevseg.refreshDisplay();
-		delay(1000);
+		++i;
 	}
 }
