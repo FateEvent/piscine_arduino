@@ -7,4 +7,5 @@ The tutorial I followed:
 * <https://www.circuitbasics.com/arduino-7-segment-display-tutorial>.
 
 For further infos on the 7-segment display:
-* <https://www.youtube.com/watch?v=tdexkAEfHg0>.
+* <https://www.youtube.com/watch?v=tdexkAEfHg0>;
+* <https://arduino-france.site/7-segments>.
