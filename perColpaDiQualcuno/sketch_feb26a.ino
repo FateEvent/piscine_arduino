@@ -17,13 +17,14 @@ void setup(){
 }
 
 void loop() {
-	for (int i = 0; i < len; i++)
+	int i = 0;
+
+	while (i < len)
 	{
-		char buf [2];
-		buf [0] = str[i];
-		buf [1] = 0;  // null terminator
+		char	buf[2] = {str[i], 0};
 		sevseg.setChars(buf);
-		sevseg.refreshDisplay();
 		delay(1000);
+		sevseg.refreshDisplay();
+		i++;
 	}
 }
