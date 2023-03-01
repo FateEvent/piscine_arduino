@@ -12,7 +12,7 @@ void setup(){
 	bool	resistorsOnSegments = true;
 	byte	hardwareConfig = COMMON_CATHODE;
 
-  Serial.begin(9600);
+  	Serial.begin(9600);
 	sevseg.begin(hardwareConfig, numDigits, digitPins, segmentPins, resistorsOnSegments);
 	sevseg.setBrightness(90);
 }
