@@ -411,11 +411,14 @@ void setup() {
    pinMode(E, OUTPUT);
    pinMode(F, OUTPUT);
    pinMode(G, OUTPUT);
+   Serial.begin(9600);
 }
 
-char  str[21] = "Hola Zuleimita linda";
-
 void loop() {
+  Serial.println("Enter data:");
+  while (Serial.available() == 0) {}
+  String str = Serial.readString();
+  Serial.println(str + '\n');
   for (char i = 0; str[i] != '\0'; i++)
   {
 	display_char(str[i]);
